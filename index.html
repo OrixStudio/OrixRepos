@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OrixRepos Package Tree</title>
+    <style>
+        body { font-family: monospace; background: #0d1117; color: #c9d1d9; padding: 20px; }
+        h1 { color: #58a6ff; border-bottom: 1px solid #30363d; padding-bottom: 10px; }
+        .tree { line-height: 1.6; }
+        .dir { color: #79c0ff; font-weight: bold; }
+        .file { color: #7ee787; }
+        .size { color: #8b949e; font-size: 0.9em; margin-left: 10px; }
+        a { color: inherit; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+    <h1>📦 OrixRepos Live Tree (/packages)</h1>
+    <div id="tree" class="tree">Loading packages tree...</div>
+
+    <script>
+        const USER = 'OrixStudio';
+        const REPO = 'OrixRepos';
+        const FOLDER = 'packages';
+
+        async function fetchPackagesTree() {
+            const container = document.getElementById('tree');
+            try {
+                const response = await fetch(`https://api.github.com/repos/${USER}/${REPO}/contents/${FOLDER}`);
+                if (!response.ok) throw new Error('Failed to load package directory.');
+                
+                const data = await response.json();
+                let output = `<div class="dir">.</div>\n<div class="dir">└── ${FOLDER}/</div>\n`;
+
+                data.forEach((item, index) => {
+                    const isLast = index === data.length - 1;
+                    const prefix = isLast ? '    └── ' : '    ├── ';
+                    const sizeKB = (item.size / 1024).toFixed(1);
+                    output += `${prefix}<a class="file" href="${item.download_url}">${item.name}</a> <span class="size">(${sizeKB} KB)</span>\n`;
+                });
+
+                container.innerHTML = `<pre>${output}</pre>`;
+            } catch (err) {
+                container.innerHTML = `<span style="color: #f85149;">Error loading live tree: ${err.message}</span>`;
+            }
+        }
+
+        fetchPackagesTree();
+    </script>
+
+</body>
+</html>
