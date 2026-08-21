@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Fixed Desktop Viewport -->
+    <meta name="viewport" content="width=1024, initial-scale=1.0">
     <title>OrixRepos | APT Package Repository</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,12 +35,12 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 2rem 1rem;
+            padding: 2.5rem 1rem;
+            min-width: 900px; /* Force desktop width layout */
         }
 
         .container {
-            width: 100%;
-            max-width: 850px;
+            width: 850px; /* Fixed desktop width */
         }
 
         /* Header Styling */
@@ -147,7 +148,6 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            overflow-x: auto;
             gap: 1rem;
         }
 
@@ -179,15 +179,6 @@
             color: var(--text-muted);
             font-size: 0.85rem;
             text-align: center;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 600px) {
-            body { padding: 1rem 0.5rem; }
-            header h1 { font-size: 1.6rem; }
-            .terminal-body { font-size: 0.85rem; padding: 1rem; }
-            .code-block { flex-direction: column; align-items: flex-start; }
-            .copy-btn { width: 100%; text-align: center; margin-top: 0.5rem; }
         }
     </style>
 </head>
@@ -275,4 +266,4 @@
         fetchPackagesTree();
     </script>
 </body>
-    </html>
+</html>
