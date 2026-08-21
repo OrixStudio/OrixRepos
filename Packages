@@ -1,0 +1,18 @@
+Package: tsu-next
+Version: 1.2.0
+Architecture: all
+Maintainer: OrixDev <asdsabed@gmail.com>
+Depends: termux-tools
+Conflicts: tsu
+Replaces: tsu
+Provides: tsu
+Filename: ./packages/tsu-next_1.2.0.deb
+Size: 1344
+MD5sum: 9e4dd101c38d8df13d41d9440ff38665
+SHA1: fc951ee625492039a528f941b39409e0410c76c3
+SHA256: d7453f5270629a32b1f49cbea3e81cb1ea2a10121466a871afaeb401e47d5658
+Section: utils
+Priority: optional
+Homepage: https://github.com/OrixStudio/tsu-next
+Description: Modern, universal root wrapper for Termux and Magisk/KernelSU.
+
