@@ -3,73 +3,70 @@
 > **Next-Generation Su Wrapper for Termux**  
 > *Seamless, blazing fast, and universal root execution layer.*
 
----
-
 ## 🌟 Overview
 
-`tsu-next` is a modern, lightweight, and refined root wrapper designed for **Termux** environments powered by **Magisk**, **KernelSU**, or **APatch**. 
+`tsu-next` is a modern, lightweight, and refined root wrapper designed for **Termux** environments powered by **Magisk**, **KernelSU**, or **APatch**.
 
-It is **NOT** the legacy `tsu` project, but a completely rebuilt next-generation wrapper designed to fix permission bugs, speed up root environment initialization, and handle environment variables (`PATH`, `HOME`, `LD_LIBRARY_PATH`) natively without overhead.
+It is **NOT** the legacy `tsu` package, but a completely rebuilt next-generation wrapper designed to eliminate permission issues, accelerate root environment startup, and accurately bridge critical environment paths (`PATH`, `HOME`, `LD_LIBRARY_PATH`) with zero latency.
 
-It binds directly to both `tsu` and `tsu-next` binaries, ensuring 100% backward compatibility with all your scripts.
+It natively maps to both `tsu` and `tsu-next` binaries, ensuring full backward compatibility with all your scripts and workflows.
 
----
 
-## ✨ Features
+## ✨ Key Features
 
-- **⚡ Instant Execution:** Zero-bloat initialization for sub-second root shell spawn.
-- **🔄 Auto-Shell Detection:** Automatically inherits your active environment shell (`zsh`, `bash`, `sh`).
-- **🔗 Dual Binary Mapping:** Works with both `tsu` and `tsu-next` commands.
-- **🔒 Native Permission Handling:** Built-in standard Debian file permissions.
-- **🛠️ Universal Root Compatibility:** Works flawlessly with Magisk, KernelSU, APatch, and standard `su`.
+* **⚡ Instant Execution:** Zero-overhead shell spawn for sub-second root access.
+* **🔄 Auto-Shell Detection:** Automatically detects and launches your preferred active shell (`zsh`, `bash`, `sh`).
+* **🔗 Dual Binary Mapping:** Supports both `tsu` and `tsu-next` syntax natively.
+* **🔒 Permission Hardened:** Pre-configured with proper Debian system executable attributes.
+* **🛠️ Universal Root Support:** Fully compatible with Magisk, KernelSU, APatch, and standard `su` implementations.
 
----
+## ⚠️ Prerequisite Step
 
-## ⚠️ Important Note Before Installation
-
-If you have the old, legacy `tsu` package installed, **you must uninstall it first** to prevent binary collision:
-
+If you currently have the original `tsu` package installed, **uninstall it first** to avoid binary conflicts:
+```bash
 pkg remove tsu -y
+```
 
----
-
-## 🚀 Quick Setup & Installation
+## 🚀 Installation Guide
 
 ### Step 1: Add OrixRepos Repository
 
-To install `tsu-next`, you need to add the **OrixRepos** master repository to your Termux package sources.
+To access `tsu-next` and other official packages, you must first register the **OrixRepos** repository in your Termux environment.
 
-👉 <a href="[https://orixstudio.github.io/OrixRepos](https://orixstudio.github.io/OrixRepos)" target="_blank">**Click Here to Visit OrixRepos for Live Package Tree & Commands**</a>
+👉 <a href="https://orixstudio.github.io/OrixRepos" target="_blank"><strong>[CLICK HERE TO OPEN ORIXREPO]</strong></a>
 
-Or run this single command to add the repository directly:
+> **Note:** Visit the link above to view the live package tree and copy the repository setup script directly into Termux.
 
-echo "deb [trusted=yes] [https://orixstudio.github.io/OrixRepos](https://orixstudio.github.io/OrixRepos) ./" > $PREFIX/etc/apt/sources.list.d/orix.list
+### Step 2: Install Package
 
-### Step 2: Install tsu-next
-
-Update your package index and install the tool:
-
+Once the repository is added, run the following command to install `tsu-next`:
+```bash
 pkg update && pkg install tsu-next
+```
 
----
+## 💻 Usage & Commands
 
-## 💻 Usage
+You can trigger the root shell using either binary alias:
 
-Simply invoke either `tsu` or `tsu-next` from your Termux prompt:
-
-# Launch root shell
+# Launch root shell using primary alias
+```bash
 tsu
+```
 
-# Alternative command
+# Launch root shell using next-gen alias
+```bash
 tsu-next
+```
 
-# Check installed version
+# Display current version
+```bash
 tsu -v
+```
 
-# View help menu
+# Display help menu
+```bash
 tsu -h
-
----
+```
 
 ## 📜 License
 
