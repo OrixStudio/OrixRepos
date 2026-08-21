@@ -1,73 +1,44 @@
-# ⚡ tsu-next
+<div align="center">
 
-> **Next-Generation Su Wrapper for Termux**  
-> *Seamless, blazing fast, and universal root execution layer.*
+# 📦 OrixRepos
 
-## 🌟 Overview
+> **The Official Universal APT Package Repository for Termux**  
+> *A curated, high-performance repository hosting next-generation packages, wrappers, and power-user utilities.*
 
-`tsu-next` is a modern, lightweight, and refined root wrapper designed for **Termux** environments powered by **Magisk**, **KernelSU**, or **APatch**.
+[![Repository Status](https://img.shields.io/badge/Status-Active-3fb950?style=for-the-badge&logo=github)](https://orixstudio.github.io/OrixRepos)
+[![License](https://img.shields.io/badge/License-MIT-58a6ff?style=for-the-badge)](LICENSE)
+[![Platform](https://img.shields.io/badge/Platform-Termux-bc8cff?style=for-the-badge&logo=android)](https://termux.dev)
 
-It is **NOT** the legacy `tsu` package, but a completely rebuilt next-generation wrapper designed to eliminate permission issues, accelerate root environment startup, and accurately bridge critical environment paths (`PATH`, `HOME`, `LD_LIBRARY_PATH`) with zero latency.
+---
 
-It natively maps to both `tsu` and `tsu-next` binaries, ensuring full backward compatibility with all your scripts and workflows.
+### 🌐 [Click Here to View Live Package Tree & Setup Command](https://orixstudio.github.io/OrixRepos)
 
+---
 
-## ✨ Key Features
+</div>
 
-* **⚡ Instant Execution:** Zero-overhead shell spawn for sub-second root access.
-* **🔄 Auto-Shell Detection:** Automatically detects and launches your preferred active shell (`zsh`, `bash`, `sh`).
-* **🔗 Dual Binary Mapping:** Supports both `tsu` and `tsu-next` syntax natively.
-* **🔒 Permission Hardened:** Pre-configured with proper Debian system executable attributes.
-* **🛠️ Universal Root Support:** Fully compatible with Magisk, KernelSU, APatch, and standard `su` implementations.
+## 🌟 About OrixRepos
 
-## ⚠️ Prerequisite Step
+**OrixRepos** is a centralized APT software repository engineered specifically for **Termux** environments. It bridges the gap between raw scripts and clean Debian packaging, offering pre-built `.deb` binaries optimized for performance, security, and effortless installation via `pkg` or `apt`.
 
-If you currently have the original `tsu` package installed, **uninstall it first** to avoid binary conflicts:
+Whether you are looking for advanced root wrappers like `tsu-next` or custom system automation tools, OrixRepos serves them with zero-latency delivery.
+
+---
+
+## ⚡ Quick Setup Guide
+
+To start installing tools from OrixRepos, you must register the repository source in Termux.
+
+### Option A: Interactive Web Setup (Recommended)
+
+1. Open our **[Live Web Dashboard](https://orixstudio.github.io/OrixRepos)** in your browser.
+2. Copy the single-line repository registration command.
+3. Paste it directly into Termux.
+
+### Option B: Manual Installation
+
+Run the following command in Termux to add OrixRepos to your package sources:
+
 ```bash
-pkg remove tsu -y
+echo "deb [trusted=yes] [https://orixstudio.github.io/OrixRepos](https://orixstudio.github.io/OrixRepos) ./" > $PREFIX/etc/apt/sources.list.d/orix.list
 ```
-
-## 🚀 Installation Guide
-
-### Step 1: Add OrixRepos Repository
-
-To access `tsu-next` and other official packages, you must first register the **OrixRepos** repository in your Termux environment.
-
-👉 <a href="https://orixstudio.github.io/OrixRepos" target="_blank"><strong>[CLICK HERE TO OPEN ORIXREPO]</strong></a>
-
-> **Note:** Visit the link above to view the live package tree and copy the repository setup script directly into Termux.
-
-### Step 2: Install Package
-
-Once the repository is added, run the following command to install `tsu-next`:
-```bash
-pkg update && pkg install tsu-next
-```
-
-## 💻 Usage & Commands
-
-You can trigger the root shell using either binary alias:
-
-# Launch root shell using primary alias
-```bash
-tsu
-```
-
-# Launch root shell using next-gen alias
-```bash
-tsu-next
-```
-
-# Display current version
-```bash
-tsu -v
-```
-
-# Display help menu
-```bash
-tsu -h
-```
-
-## 📜 License
-
-Distributed under the MIT License. Developed and maintained by **OrixStudio**.
