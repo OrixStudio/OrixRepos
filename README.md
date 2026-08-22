@@ -34,11 +34,3 @@ To start installing tools from OrixRepos, you must register the repository sourc
 1. Open our **[Live Web Dashboard](https://orixstudio.github.io/OrixRepos)** in your browser.
 2. Copy the single-line repository registration command.
 3. Paste it directly into Termux.
-
-### Option B: Manual Installation
-
-Run the following command in Termux to add OrixRepos to your package sources:
-
-```bash
-echo "deb [trusted=yes] [https://orixstudio.github.io/OrixRepos](https://orixstudio.github.io/OrixRepos) ./" > $PREFIX/etc/apt/sources.list.d/orix.list
-```
